@@ -5,9 +5,10 @@ public class Pessoa{
 	String cpf;
 	Endereco end;
 	
-	public Pessoa(String nome, String cpf) {
+	public Pessoa(String nome, String cpf, Endereco end) {
 		this.nome = nome;
 		this.cpf = cpf;
+		this.end = end;
 	}
 	
 	public String getNome() {
@@ -16,5 +17,9 @@ public class Pessoa{
 	
 	public String getCPF() {
 		return cpf;
+	}
+	
+	public Endereco getEnd() {
+		return end;
 	}
 }
