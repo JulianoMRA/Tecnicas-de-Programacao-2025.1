@@ -40,4 +40,51 @@ public class Banco {
 		}
 		contas[i].creditar(valor);
 	}
+	
+	public void debitar(String numero, double valor) {
+		int i = 0;
+		while(i<indice) {
+			if(contas[i].numero().equals(numero)) {
+				break;
+			} else {
+				i++;
+			}
+		}
+		contas[i].debitar(valor);
+	}
+	
+	public double saldo(String numero) {
+		int i = 0;
+		while(i<indice) {
+			if(contas[i].numero().equals(numero)) {
+				break;
+			} else {
+				i++;
+			}
+		}
+		return contas[i].saldo();
+	}
+	
+	public void transferir(String origem, String destino, double valor) {
+		// Procurando a conta origem e debitando o valor:
+		int i = 0;
+		while(i<indice) {
+			if(contas[i].numero().equals(origem)) {
+				break;
+			} else {
+				i++;
+			}
+		}
+		contas[i].debitar(valor);
+		// Procurando a conta destino e creditando o valor
+		int j = 0;
+		while(j<indice) {
+			if(contas[j].numero().equals(destino)) {
+				break;
+			} else {
+				j++;
+			}
+		}
+		contas[j].creditar(valor);
+	}
 }
