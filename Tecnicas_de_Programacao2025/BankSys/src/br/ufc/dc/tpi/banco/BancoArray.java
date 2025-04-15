@@ -1,10 +1,12 @@
-package BankSys;
+package br.ufc.dc.tpi.banco;
 
-public class Banco {
+import br.ufc.dc.tpi.banco.contas.Conta;
+
+public class BancoArray {
 	private Conta[] contas;
 	private int indice = 0;
 	
-	public Banco(){
+	public BancoArray(){
 		contas = new Conta[100];
 	}
 	

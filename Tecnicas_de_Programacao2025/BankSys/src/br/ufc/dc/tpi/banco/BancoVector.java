@@ -1,29 +1,29 @@
-package BankSys;
+package br.ufc.dc.tpi.banco;
+import br.ufc.dc.tpi.banco.contas.Conta;
+import java.util.Vector;
 
-public class Banco {
-	private Conta[] contas;
+public class BancoVector {
+	private Vector<Conta> contas = new Vector<Conta>();
 	private int indice = 0;
 	
-	public Banco(){
-		contas = new Conta[100];
-	}
-	
 	public void cadastrar(Conta conta) {
-		contas[indice] = conta;
+		contas.add(conta);
 		indice++;
 	}
 	
 	public Conta procurar(String numero) {
 		int i = 0;
 		boolean achou = false;
+		
 		while((!achou) && (i<indice)) {
-			if(contas[i].numero().equals(numero)) {
+			if(contas.get(i).numero() == numero) {
 				achou = true;
 			} else {
 				i++;
 			}
+			
 			if(achou == true) {
-				return contas[i];
+				return contas.get(i);
 			} 
 		}
 		return null;
