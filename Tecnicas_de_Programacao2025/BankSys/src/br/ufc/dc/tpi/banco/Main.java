@@ -1,5 +1,4 @@
-package BankSys;
-import br.ufc.dc.tpi.banco.BancoVector;
+package br.ufc.dc.tpi.banco;
 import br.ufc.dc.tpi.banco.contas.Conta;
 
 public class Main {
@@ -23,17 +22,17 @@ public class Main {
 		
 		//Prints:
 		System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-");
-		System.out.println("Conta Bancária de " + conta.nome());
+		System.out.println("Conta Bancária de " + conta.GetNome());
 		System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-");
-		System.out.println("Número de " + conta.nome() + ": " + conta.numero());
+		System.out.println("Número de " + conta.GetNome() + ": " + conta.GetNumero());
 		System.out.println("Saldo: " + banco.saldo("1234-5"));
 		
 		System.out.println("");
 		
 		System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-");
-		System.out.println("Conta Bancária de " + conta1.nome());
+		System.out.println("Conta Bancária de " + conta1.GetNome());
 		System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-");
-		System.out.println("Número de " + conta1.nome() + ": " + conta1.numero());
+		System.out.println("Número de " + conta1.GetNome() + ": " + conta1.GetNumero());
 		System.out.println("Saldo: " + banco.saldo("1234-6"));
 	}
 }

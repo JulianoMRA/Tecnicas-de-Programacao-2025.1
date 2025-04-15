@@ -18,13 +18,13 @@ public class Conta {
 	public void debitar (double valor) {
 		saldo = saldo - valor;
 	}
-	public String numero() {
+	public String GetNumero() {
 		return numero;
 	}
-	public String nome() {
+	public String GetNome() {
 		return nome;
 	}
-	public double saldo() {
+	public double GetSaldo() {
 		return saldo;
 	}
 }

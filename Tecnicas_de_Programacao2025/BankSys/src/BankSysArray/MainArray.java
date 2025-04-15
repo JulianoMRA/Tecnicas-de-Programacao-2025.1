@@ -1,17 +1,17 @@
-package BankSys;
+package BankSysArray;
 
-public class CriaConta {
+public class MainArray {
 	public static void main(String[] args) {
-		Conta conta;
-		conta = new Conta("1234-5", "Juliano");
-		Conta conta1;
-		conta1 = new Conta("1234-6", "Vanessa");
+		ContaArray conta;
+		conta = new ContaArray("1234-5", "Juliano");
+		ContaArray conta1;
+		conta1 = new ContaArray("1234-6", "Vanessa");
 		conta.creditar(1000);
 		conta1.creditar(2000);
 		
 		//Testando funcionalidades novas do Banco
-		Banco banco;
-		banco = new Banco();
+		BancoArray banco;
+		banco = new BancoArray();
 		banco.cadastrar(conta);
 		banco.cadastrar(conta1);
 		banco.transferir("1234-5", "1234-6", 500);
@@ -21,17 +21,17 @@ public class CriaConta {
 		
 		//Prints:
 		System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-");
-		System.out.println("Conta Bancária de " + conta.nome());
+		System.out.println("Conta Bancária de " + conta.GetNome());
 		System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-");
-		System.out.println("Número de " + conta.nome() + ": " + conta.numero());
+		System.out.println("Número de " + conta.GetNome() + ": " + conta.GetNumero());
 		System.out.println("Saldo: " + banco.saldo("1234-5"));
 		
 		System.out.println("");
 		
 		System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-");
-		System.out.println("Conta Bancária de " + conta1.nome());
+		System.out.println("Conta Bancária de " + conta1.GetNome());
 		System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-");
-		System.out.println("Número de " + conta1.nome() + ": " + conta1.numero());
+		System.out.println("Número de " + conta1.GetNome() + ": " + conta1.GetNumero());
 		System.out.println("Saldo: " + banco.saldo("1234-6"));
 	}
 }

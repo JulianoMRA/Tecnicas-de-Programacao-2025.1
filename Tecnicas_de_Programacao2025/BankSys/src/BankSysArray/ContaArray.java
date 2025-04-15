@@ -1,11 +1,11 @@
-package BankSys;
+package BankSysArray;
 
-public class Conta {
+public class ContaArray {
 	private String numero;
 	private String nome;
 	private double saldo;
 	
-	public Conta(String numero, String nome) {
+	public ContaArray(String numero, String nome) {
 		this.numero = numero;
 		this.nome = nome;
 		saldo = 0;
@@ -18,13 +18,13 @@ public class Conta {
 	public void debitar (double valor) {
 		saldo = saldo - valor;
 	}
-	public String numero() {
+	public String GetNumero() {
 		return numero;
 	}
-	public String nome() {
+	public String GetNome() {
 		return nome;
 	}
-	public double saldo() {
+	public double GetSaldo() {
 		return saldo;
 	}
 }

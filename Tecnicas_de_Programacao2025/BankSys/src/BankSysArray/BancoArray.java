@@ -1,25 +1,23 @@
-package br.ufc.dc.tpi.banco;
-
-import br.ufc.dc.tpi.banco.contas.Conta;
+package BankSysArray;
 
 public class BancoArray {
-	private Conta[] contas;
+	private ContaArray[] contas;
 	private int indice = 0;
 	
 	public BancoArray(){
-		contas = new Conta[100];
+		contas = new ContaArray[100];
 	}
 	
-	public void cadastrar(Conta conta) {
+	public void cadastrar(ContaArray conta) {
 		contas[indice] = conta;
 		indice++;
 	}
 	
-	public Conta procurar(String numero) {
+	public ContaArray procurar(String numero) {
 		int i = 0;
 		boolean achou = false;
 		while((!achou) && (i<indice)) {
-			if(contas[i].numero().equals(numero)) {
+			if(contas[i].GetNumero().equals(numero)) {
 				achou = true;
 			} else {
 				i++;
@@ -32,23 +30,23 @@ public class BancoArray {
 	}
 	
 	public void creditar(String numero, double valor) {
-		Conta conta = procurar(numero);
+		ContaArray conta = procurar(numero);
 		conta.creditar(valor);
 	}
 	
 	public void debitar(String numero, double valor) {
-		Conta conta = procurar(numero);
+		ContaArray conta = procurar(numero);
 		conta.debitar(valor);
 	}
 	
 	public double saldo(String numero) {
-		Conta conta = procurar(numero);
-		return conta.saldo();
+		ContaArray conta = procurar(numero);
+		return conta.GetSaldo();
 	}
 	
 	public void transferir(String origem, String destino, double valor) {
-		Conta ContaOrigem = procurar(origem);
-		Conta ContaDestino = procurar(destino);
+		ContaArray ContaOrigem = procurar(origem);
+		ContaArray ContaDestino = procurar(destino);
 		if(ContaOrigem == null) {
 			System.out.println("Conta de Origem inexistente");
 		}

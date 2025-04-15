@@ -16,7 +16,7 @@ public class BancoVector {
 		boolean achou = false;
 		
 		while((!achou) && (i<indice)) {
-			if(contas.get(i).numero() == numero) {
+			if(contas.get(i).GetNumero() == numero) {
 				achou = true;
 			} else {
 				i++;
@@ -41,7 +41,7 @@ public class BancoVector {
 	
 	public double saldo(String numero) {
 		Conta conta = procurar(numero);
-		return conta.saldo();
+		return conta.GetSaldo();
 	}
 	
 	public void transferir(String origem, String destino, double valor) {
