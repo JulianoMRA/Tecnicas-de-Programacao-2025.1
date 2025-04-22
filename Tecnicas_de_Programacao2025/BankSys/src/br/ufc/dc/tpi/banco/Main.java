@@ -3,18 +3,20 @@ import br.ufc.dc.tpi.banco.contas.Conta;
 
 public class Main {
 	public static void main(String[] args) {
+		
+		BancoVector banco;
+		banco = new BancoVector();
 		Conta conta;
 		conta = new Conta("1234-5", "Juliano");
 		Conta conta1;
 		conta1 = new Conta("1234-6", "Vanessa");
-		conta.creditar(1000);
-		conta1.creditar(2000);
-		
-		//Testando funcionalidades novas do Banco
-		BancoVector banco;
-		banco = new BancoVector();
 		banco.cadastrar(conta);
 		banco.cadastrar(conta1);
+		
+		
+		// Testando Funcionalidades
+		conta.creditar(1000);
+		conta1.creditar(2000);
 		banco.transferir("1234-5", "1234-6", 500);
 		banco.debitar("1234-6", 400);
 		banco.creditar("1234-5", 1500);
