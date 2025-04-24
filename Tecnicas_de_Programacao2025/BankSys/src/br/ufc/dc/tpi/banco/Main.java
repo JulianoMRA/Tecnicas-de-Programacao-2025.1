@@ -17,7 +17,7 @@ public class Main {
 		ContaPoupança contap = new ContaPoupança("7777-7", "Edileudo");
 		banco.cadastrar(contap);
 		contap.creditar(600);
-		contap.renderJuros(0.1);
+		banco.renderJuros("7777-7", 0.1);
 		
 		// Testando Funcionalidades
 		conta.creditar(1000);

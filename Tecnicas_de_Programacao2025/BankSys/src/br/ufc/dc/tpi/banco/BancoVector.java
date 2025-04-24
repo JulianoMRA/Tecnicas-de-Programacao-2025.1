@@ -59,4 +59,14 @@ public class BancoVector {
 			ContaDestino.creditar(valor);
 		}
 	}
+	
+	public void renderJuros(String numero, double taxa) {
+		ContaPoupança contap;
+		contap = (ContaPoupança) procurar(numero);
+		if (contap == null) {
+			System.out.println("Conta Inexistente.");
+		} else {
+			contap.renderJuros(taxa);
+		}
+	}
 }
