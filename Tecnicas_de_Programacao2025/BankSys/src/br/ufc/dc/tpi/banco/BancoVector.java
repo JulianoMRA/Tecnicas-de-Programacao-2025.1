@@ -1,5 +1,6 @@
 package br.ufc.dc.tpi.banco;
-import br.ufc.dc.tpi.banco.contas.Conta;
+import br.ufc.dc.tpi.banco.contas.*;
+
 import java.util.Vector;
 
 public class BancoVector {
@@ -43,7 +44,7 @@ public class BancoVector {
 		Conta conta = procurar(numero);
 		return conta.GetSaldo();
 	}
-	
+
 	public void transferir(String origem, String destino, double valor) {
 		Conta ContaOrigem = procurar(origem);
 		Conta ContaDestino = procurar(destino);
