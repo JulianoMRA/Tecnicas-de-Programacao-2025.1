@@ -42,6 +42,10 @@ public class BancoVector {
 	
 	public double saldo(String numero) {
 		Conta conta = procurar(numero);
+		
+		if(conta.GetSaldo() == 0) {
+			System.out.println("Conta sem saldo.");
+		}
 		return conta.GetSaldo();
 	}
 

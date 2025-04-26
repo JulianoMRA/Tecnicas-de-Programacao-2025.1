@@ -1,55 +1,35 @@
 package br.ufc.dc.tpi.banco;
 import br.ufc.dc.tpi.banco.contas.*;
+import br.ufc.dc.tpi.banco.usuario.*;
 
 public class Main {
 	public static void main(String[] args) {
-		
+		// Criando o Banco
 		BancoVector banco;
 		banco = new BancoVector();
-		Conta conta;
-		conta = new Conta("1234-5", "Juliano");
-		Conta conta1;
-		conta1 = new Conta("1234-6", "Vanessa");
-		banco.cadastrar(conta);
-		banco.cadastrar(conta1);
+		// Criando o user
+		Usuario Ademir;
+		Ademir = new Usuario("Ademir Mirassol Jacinto", "666.666.666-66", "20072007077-5", 1912);
+		// Criando a conta
+		Conta conta_ademir;
+		conta_ademir = new Conta("7777-7", Ademir);
+		// Cadastrando a conta no banco
+		banco.cadastrar(conta_ademir);
 		
-		// Testando features da poupança
-		ContaPoupança contap = new ContaPoupança("7777-7", "Edileudo");
-		banco.cadastrar(contap);
-		contap.creditar(600);
-		banco.renderJuros("7777-7", 0.1);
+		// Testando funcionalidades
 		
-		// Testando Funcionalidades
-		conta.creditar(1000);
-		conta1.creditar(2000);
-		
-		banco.transferir("1234-5", "1234-6", 500);
-		banco.debitar("1234-6", 400);
-		banco.creditar("1234-5", 1500);
-		
-		
-		//Prints:
-		System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-");
-		System.out.println("Conta Bancária de " + conta.GetNome());
-		System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-");
-		System.out.println("Número de " + conta.GetNome() + ": " + conta.GetNumero());
-		System.out.println("Saldo: " + banco.saldo("1234-5"));
+		banco.creditar("7777-7", 1500);
 		
 		System.out.println("");
 		
-		System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-");
-		System.out.println("Conta Bancária de " + conta1.GetNome());
-		System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-");
-		System.out.println("Número de " + conta1.GetNome() + ": " + conta1.GetNumero());
-		System.out.println("Saldo: " + banco.saldo("1234-6"));
-		
-		System.out.println("");
-		
-		System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-");
-		System.out.println("Conta Bancária de " + contap.GetNome());
-		System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-");
-		System.out.println("Número de " + contap.GetNome() + ": " + contap.GetNumero());
+		System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
+		System.out.println("Conta Bancária de " + conta_ademir.GetNome());
+		System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
+		System.out.println("Número de " + conta_ademir.GetNome() + ": " + conta_ademir.GetNumero());
 		System.out.println("Saldo: " + banco.saldo("7777-7"));
+		System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
+		System.out.println("Dados: ");
+		conta_ademir.GetDados();
 	}
 }
 
