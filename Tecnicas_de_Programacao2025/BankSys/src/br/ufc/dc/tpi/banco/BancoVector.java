@@ -63,10 +63,22 @@ public class BancoVector {
 	public void renderJuros(String numero, double taxa) {
 		ContaPoupança contap;
 		contap = (ContaPoupança) procurar(numero);
+		
 		if (contap == null) {
 			System.out.println("Conta Inexistente.");
 		} else {
 			contap.renderJuros(taxa);
+		}
+	}
+	
+	public void renderBonus(String numero) {
+		ContaEspecial contaE;
+		contaE = (ContaEspecial) procurar(numero);
+		
+		if (contaE == null) {
+			System.out.println("Conta Inexistente.");
+		} else {
+			contaE.renderBonus();
 		}
 	}
 }

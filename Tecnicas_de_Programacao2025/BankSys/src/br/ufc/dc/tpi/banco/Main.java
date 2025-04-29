@@ -19,6 +19,12 @@ public class Main {
 		contap.creditar(600);
 		banco.renderJuros("7777-7", 0.1);
 		
+		// Testando features da Conta Especial
+		ContaEspecial contaE = new ContaEspecial("6666-6", "Jorge");
+		banco.cadastrar(contaE);
+		contaE.creditar(1000);
+		banco.renderBonus("6666-6");
+		
 		// Testando Funcionalidades
 		conta.creditar(1000);
 		conta1.creditar(2000);
@@ -50,6 +56,13 @@ public class Main {
 		System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-");
 		System.out.println("Número de " + contap.GetNome() + ": " + contap.GetNumero());
 		System.out.println("Saldo: " + banco.saldo("7777-7"));
+		
+		System.out.println("");
+		
+		System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-");
+		System.out.println("Conta Bancária de " + contaE.GetNome());
+		System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-");
+		System.out.println("Número de " + contaE.GetNome() + ": " + contaE.GetNumero());
+		System.out.println("Saldo: " + banco.saldo("6666-6"));
 	}
 }
-
