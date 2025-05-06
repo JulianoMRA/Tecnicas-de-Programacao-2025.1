@@ -7,9 +7,9 @@ public class Main {
 		BancoVector banco;
 		banco = new BancoVector();
 		Conta conta;
-		conta = new Conta("1234-5", "Juliano");
+		conta = new ContaImposto("1234-5", "Juliano");
 		Conta conta1;
-		conta1 = new Conta("1234-6", "Vanessa");
+		conta1 = new ContaImposto("1234-6", "Vanessa");
 		banco.cadastrar(conta);
 		banco.cadastrar(conta1);
 		

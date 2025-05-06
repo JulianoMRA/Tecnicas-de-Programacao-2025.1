@@ -1,6 +1,6 @@
 package br.ufc.dc.tpi.banco.contas;
 
-public class Conta {
+public abstract class Conta {
 	private String numero;
 	private String nome;
 	private double saldo;
