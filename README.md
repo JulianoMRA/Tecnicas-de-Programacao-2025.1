@@ -1,0 +1,1 @@
+Repositório dedicado à disciplina de Técnicas de Programação na Universidade Federal do Ceará, semestre 2025.1. Onde aprenderemos Programação Orientada a Objeto utilizando a Linguagem Java. Durante a disciplina, faremos um Running Example, onde implementaremos aula à aula um sistema bancário.
