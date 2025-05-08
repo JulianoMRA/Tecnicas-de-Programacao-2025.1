@@ -1,7 +1,7 @@
 package br.ufc.dc.tpi.banco;
 import br.ufc.dc.tpi.banco.contas.*;
 
-public interface IRepositorioConta {
+public interface IRepositorioContas {
 	public void inserir(ContaAbstrata conta);
 	public void remover(String numero);
 	public ContaAbstrata procurar(String numero);

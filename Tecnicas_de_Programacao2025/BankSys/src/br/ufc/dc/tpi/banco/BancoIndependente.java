@@ -6,8 +6,13 @@ import java.util.Vector;
 public class BancoIndependente implements IBanco{
 	private Vector<ContaAbstrata> contas = new Vector<ContaAbstrata>();
 	private int indice = 0;
+	
+	
 	private double saldoTotal = 0;
 	private int numContas = 0;
+	
+	
+	
 	
 	public void cadastrar(ContaAbstrata conta) {
 		contas.add(conta);
