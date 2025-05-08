@@ -3,16 +3,19 @@ import br.ufc.dc.tpi.banco.contas.*;
 
 import java.util.Vector;
 
-public class BancoVector {
+public class BancoIndependente implements IBanco{
 	private Vector<ContaAbstrata> contas = new Vector<ContaAbstrata>();
 	private int indice = 0;
+	private double saldoTotal = 0;
+	private int numContas = 0;
 	
 	public void cadastrar(ContaAbstrata conta) {
 		contas.add(conta);
 		indice++;
+		numContas++;
 	}
 	
-	public ContaAbstrata procurar(String numero) {
+	private ContaAbstrata procurar(String numero) {
 		int i = 0;
 		boolean achou = false;
 		
@@ -33,11 +36,13 @@ public class BancoVector {
 	public void creditar(String numero, double valor) {
 		ContaAbstrata conta = procurar(numero);
 		conta.creditar(valor);
+		saldoTotal = saldoTotal + valor;
 	}
 	
 	public void debitar(String numero, double valor) {
 		ContaAbstrata conta = procurar(numero);
 		conta.debitar(valor);
+		saldoTotal = saldoTotal - valor;
 	}
 	
 	public double saldo(String numero) {
@@ -80,5 +85,13 @@ public class BancoVector {
 		} else {
 			contaE.renderBonus();
 		}
+	}
+
+	public double saldoTotal() {
+		return saldoTotal;
+	}
+
+	public int numContas() {
+		return numContas;
 	}
 }
