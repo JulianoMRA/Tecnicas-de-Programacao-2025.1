@@ -4,20 +4,20 @@ import br.ufc.dc.tpi.banco.contas.*;
 import java.util.Vector;
 
 public class BancoVector {
-	private Vector<Conta> contas = new Vector<Conta>();
+	private Vector<ContaAbstrata> contas = new Vector<ContaAbstrata>();
 	private int indice = 0;
 	
-	public void cadastrar(Conta conta) {
+	public void cadastrar(ContaAbstrata conta) {
 		contas.add(conta);
 		indice++;
 	}
 	
-	public Conta procurar(String numero) {
+	public ContaAbstrata procurar(String numero) {
 		int i = 0;
 		boolean achou = false;
 		
 		while((!achou) && (i<indice)) {
-			if(contas.get(i).GetNumero() == numero) {
+			if(contas.get(i).getNumero() == numero) {
 				achou = true;
 			} else {
 				i++;
@@ -31,23 +31,23 @@ public class BancoVector {
 	}
 	
 	public void creditar(String numero, double valor) {
-		Conta conta = procurar(numero);
+		ContaAbstrata conta = procurar(numero);
 		conta.creditar(valor);
 	}
 	
 	public void debitar(String numero, double valor) {
-		Conta conta = procurar(numero);
+		ContaAbstrata conta = procurar(numero);
 		conta.debitar(valor);
 	}
 	
 	public double saldo(String numero) {
-		Conta conta = procurar(numero);
-		return conta.GetSaldo();
+		ContaAbstrata conta = procurar(numero);
+		return conta.getSaldo();
 	}
 
 	public void transferir(String origem, String destino, double valor) {
-		Conta ContaOrigem = procurar(origem);
-		Conta ContaDestino = procurar(destino);
+		ContaAbstrata ContaOrigem = procurar(origem);
+		ContaAbstrata ContaDestino = procurar(destino);
 		if(ContaOrigem == null) {
 			System.out.println("Conta de Origem inexistente");
 		}

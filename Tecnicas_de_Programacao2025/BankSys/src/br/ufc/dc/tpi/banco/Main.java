@@ -6,9 +6,9 @@ public class Main {
 		
 		BancoVector banco;
 		banco = new BancoVector();
-		Conta conta;
+		ContaAbstrata conta;
 		conta = new ContaImposto("1234-5", "Juliano");
-		Conta conta1;
+		ContaAbstrata conta1;
 		conta1 = new ContaImposto("1234-6", "Vanessa");
 		banco.cadastrar(conta);
 		banco.cadastrar(conta1);
@@ -25,6 +25,13 @@ public class Main {
 		contaE.creditar(1000);
 		banco.renderBonus("6666-6");
 		
+		// Testando features da Conta Imposto
+		ContaImposto contaI = new ContaImposto("8888-8", "Donatelo");
+		banco.cadastrar(contaI);
+		contaI.creditar(2000);
+		banco.creditar("8888-8", 1000);
+		contaI.debitar(100);
+		
 		// Testando Funcionalidades
 		conta.creditar(1000);
 		conta1.creditar(2000);
@@ -36,33 +43,41 @@ public class Main {
 		
 		//Prints:
 		System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-");
-		System.out.println("Conta Bancária de " + conta.GetNome());
+		System.out.println("Conta Bancária de " + conta.getNome());
 		System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-");
-		System.out.println("Número de " + conta.GetNome() + ": " + conta.GetNumero());
+		System.out.println("Número de " + conta.getNome() + ": " + conta.getNumero());
 		System.out.println("Saldo: " + banco.saldo("1234-5"));
 		
 		System.out.println("");
 		
 		System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-");
-		System.out.println("Conta Bancária de " + conta1.GetNome());
+		System.out.println("Conta Bancária de " + conta1.getNome());
 		System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-");
-		System.out.println("Número de " + conta1.GetNome() + ": " + conta1.GetNumero());
+		System.out.println("Número de " + conta1.getNome() + ": " + conta1.getNumero());
 		System.out.println("Saldo: " + banco.saldo("1234-6"));
 		
 		System.out.println("");
 		
 		System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-");
-		System.out.println("Conta Bancária de " + contap.GetNome());
+		System.out.println("Conta Poupança Bancária de " + contap.getNome());
 		System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-");
-		System.out.println("Número de " + contap.GetNome() + ": " + contap.GetNumero());
+		System.out.println("Número de " + contap.getNome() + ": " + contap.getNumero());
 		System.out.println("Saldo: " + banco.saldo("7777-7"));
 		
 		System.out.println("");
 		
 		System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-");
-		System.out.println("Conta Bancária de " + contaE.GetNome());
+		System.out.println("Conta Especial Bancária de " + contaE.getNome());
 		System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-");
-		System.out.println("Número de " + contaE.GetNome() + ": " + contaE.GetNumero());
+		System.out.println("Número de " + contaE.getNome() + ": " + contaE.getNumero());
 		System.out.println("Saldo: " + banco.saldo("6666-6"));
+		
+		System.out.println("");
+		
+		System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-");
+		System.out.println("Conta Imposto Bancária de " + contaI.getNome());
+		System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-");
+		System.out.println("Número de " + contaI.getNome() + ": " + contaI.getNumero());
+		System.out.println("Saldo: " + banco.saldo("8888-8"));
 	}
 }

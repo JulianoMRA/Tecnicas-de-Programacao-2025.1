@@ -7,6 +7,6 @@ public class ContaPoupança extends Conta{
 	}
 	
 	public void renderJuros(double taxa) {
-		creditar(GetSaldo() * taxa);
+		creditar(getSaldo() * taxa);
 	}
 }
