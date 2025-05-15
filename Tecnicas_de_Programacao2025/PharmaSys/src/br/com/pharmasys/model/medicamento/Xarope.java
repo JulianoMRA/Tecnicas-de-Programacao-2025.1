@@ -11,7 +11,7 @@ public class Xarope extends Medicamento {
     }
 
     public String descricaoPosologia() {
-        return String.format("Tomar %.1f ml por dia, totalizando %d ml de %s.",
+        return String.format("Tomar %.1f ml por dia, totalizando %d doses de %s.",
                 doseDiaria, quantidade, dosagem);
     }
 }

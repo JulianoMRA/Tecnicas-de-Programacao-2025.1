@@ -7,11 +7,8 @@ public class Medico {
 	private String especialidade;
 	
 	// Construtor
-	public Medico(String nome, String sobrenome, String crm, String especialidade) {
-		this.nome = nome;
-		this.sobrenome = sobrenome;
-		this.crm = crm;
-		this.especialidade = especialidade;
+	public Medico() {
+
 	}
 	
 	// Getters e Setters

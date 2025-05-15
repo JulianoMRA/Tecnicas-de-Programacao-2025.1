@@ -33,6 +33,19 @@ public class Prescricao {
         return Collections.unmodifiableList(medicamentos);
     }
     
+    // Adicionando e removendo Medicamentos
+    public void adicionarMedicamento(Medicamento medicamento) {
+        if (medicamento != null) {
+            medicamentos.add(medicamento);
+        } else {
+        	System.out.println("Medicamento inválido!");
+        }
+    }
+    
+    public boolean removerMedicamento(Medicamento medicamento) {
+        return medicamentos.remove(medicamento);
+    }
+    
     // Printador da Prescrição (GPT)
     public String resumoPrescricao() {
         StringBuilder sb = new StringBuilder();

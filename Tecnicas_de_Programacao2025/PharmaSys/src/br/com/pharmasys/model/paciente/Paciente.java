@@ -8,12 +8,7 @@ public class Paciente {
 	private int idade;
 	
 	// Construtor
-	public Paciente(String nome, String sobrenome, String cpf, String plano, int idade) {
-		this.nome = nome;
-		this.sobrenome = sobrenome;
-		this.cpf = cpf;
-		this.plano = plano;
-		this.idade = idade;
+	public Paciente() {
 	}
 	
 	// Getters e Setters
