@@ -1,0 +1,1 @@
+package br.com.pharmasys.model.medicamento;
